@@ -1,0 +1,31 @@
+{
+  "name": "retraced-challenge",
+  "version": "0.1.0",
+  "description": "An example of a recursive API",
+  "homepage": "https://github.com/davidodio/retraced-challenge",
+  "bugs": {
+    "url": "https://github.com/davidodio/retraced-challenge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidodio/retraced-challenge.git"
+  },
+  "license": "MIT",
+  "author": "David O'Donnell <code@davidod.io>",
+  "scripts": {
+    "dev": "nodemon src/",
+    "start": "node src/",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "26.6.3",
+    "nodemon": "2.0.7"
+  },
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "fastify": "3.15.1",
+    "fastify-autoload": "3.7.1",
+    "fastify-plugin": "^3.0.0",
+    "pino-pretty": "4.7.1"
+  }
+}
