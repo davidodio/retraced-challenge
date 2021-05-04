@@ -1,0 +1,1 @@
+const { formatResults } = require('./results-formatter')
