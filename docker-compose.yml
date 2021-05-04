@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DBUSER}
+      POSTGRES_PASSWORD: ${DBPASSWORD}
+    ports: 
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./infrastructure/create-tables.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build:
+      context: .
+    environment:
+      DB_SCHEMA: postgres
+      DB_USER: ${DBUSER}
+      DB_PASSWORD: ${DBPASSWORD}
+      DB_HOST: postgres
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'
+        
+volumes:
+  db-data:
