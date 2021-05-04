@@ -1,4 +1,4 @@
-const addSchema = {
+const addCategory = {
   body: {
     type: 'object',
     properties: {
@@ -16,7 +16,7 @@ const addSchema = {
 const post = async (fastify, options) => {  
   const client = await fastify.pg.connect()
   
-  fastify.post('/', async (req, res) => { 
+  fastify.post('/', { schema: addCategory }, async (req, res) => { 
     try {
       const { name, parent_id } = request.body      
       const sql = {
